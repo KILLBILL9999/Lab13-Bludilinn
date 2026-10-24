@@ -95,17 +95,60 @@
 // PrintPerson("Дмитрий", 20);
 // PrintPerson("Валерия", 18);
 
-int FindMax(int[] numbers)
+// int FindMax(int[] numbers)
+// {
+//     int max = numbers[0];
+//     foreach (int number in numbers)
+//     {
+//         if (number > max)
+//             max = number;
+//     }
+//     return max;
+// }
+
+// int[] values = { 10, 25, 7, 42, 18 };
+// int maxValue = FindMax(values);
+// Console.WriteLine($"Максимальное число: {maxValue}");
+
+// Console.Write("Введите свою фамилию: ");
+// string surname = Console.ReadLine()!.Trim();
+// if (string.IsNullOrEmpty(surname)) {
+// Console.WriteLine("Фамилия не введена. Завершение работы.");
+// return;
+// }
+// Random rnd = new(surname.GetHashCode() + DateTime.Now.DayOfYear);
+// var assigned = Enumerable.Range(1, 10)
+// .OrderBy(_ => rnd.Next())
+// .Take(2)
+// .OrderBy(x => x)
+// .ToList();
+// Console.WriteLine($"Задачи: №{assigned[0]} и №{assigned[1]}");
+
+// void PrintSeparator()
+// {
+//     Console.WriteLine("----------------------------------------");
+// }
+
+// Console.WriteLine("Начало программы");
+// PrintSeparator();
+// Console.WriteLine("Первый блок вывода");
+// PrintSeparator();
+// Console.WriteLine("Второй блок вывода");
+// PrintSeparator();
+// Console.WriteLine("Конец программы");
+
+int FindMin(int[] numbers)
 {
-    int max = numbers[0];
+    int min = numbers[0];
     foreach (int number in numbers)
     {
-        if (number > max)
-            max = number;
+        if (number < min)
+            min = number;
     }
-    return max;
+    return min;
 }
 
 int[] values = { 10, 25, 7, 42, 18 };
-int maxValue = FindMax(values);
-Console.WriteLine($"Максимальное число: {maxValue}");
+int minValue = FindMin(values);
+Console.WriteLine($"Массив: [{string.Join(", ", values)}]");
+Console.WriteLine($"Минимальное число: {minValue}");
