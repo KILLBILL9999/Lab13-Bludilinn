@@ -54,33 +54,58 @@
 //     Console.WriteLine($"Стипендия: {result}");
 // }
 
-double CalculateAverageGrade(int[] grades)
+// double CalculateAverageGrade(int[] grades)
+// {
+//     int sum = 0;
+//     foreach (int grade in grades)
+//     {
+//         sum += grade;
+//     }
+//     return (double)sum / grades.Length;
+// }
+
+// int CountFives(int[] grades)
+// {
+//     int count = 0;
+//     foreach (int grade in grades)
+//     {
+//         if (grade == 5)
+//         {
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+
+// int[] grades = { 5, 4, 5, 3, 5, 4, 5 };
+
+// double average = CalculateAverageGrade(grades);
+// int fives = CountFives(grades);
+
+// Console.WriteLine($"Средний балл: {average}");
+// Console.WriteLine($"Количество пятёрок: {fives}");
+
+
+// void PrintPerson(string name, int age)
+// {
+//     Console.WriteLine($"Имя: {name}, возраст: {age}");
+// }
+
+// PrintPerson("Ярослав", 19);
+// PrintPerson("Дмитрий", 20);
+// PrintPerson("Валерия", 18);
+
+int FindMax(int[] numbers)
 {
-    int sum = 0;
-    foreach (int grade in grades)
+    int max = numbers[0];
+    foreach (int number in numbers)
     {
-        sum += grade;
+        if (number > max)
+            max = number;
     }
-    return (double)sum / grades.Length;
+    return max;
 }
 
-int CountFives(int[] grades)
-{
-    int count = 0;
-    foreach (int grade in grades)
-    {
-        if (grade == 5)
-        {
-            count++;
-        }
-    }
-    return count;
-}
-
-int[] grades = { 5, 4, 5, 3, 5, 4, 5 };
-
-double average = CalculateAverageGrade(grades);
-int fives = CountFives(grades);
-
-Console.WriteLine($"Средний балл: {average}");
-Console.WriteLine($"Количество пятёрок: {fives}");
+int[] values = { 10, 25, 7, 42, 18 };
+int maxValue = FindMax(values);
+Console.WriteLine($"Максимальное число: {maxValue}");
